@@ -41,7 +41,7 @@ do
 	# Use glob expansion to check if file is present
 	for f in $directory/*; do
 		# Escape directory for use in sed
-		escdirectory="$(echo "$directory" | sed 's/\//\\\//g')\/";
+		escdirectory="$(echo "$directory" | sed 's/\//\\\//g')";
 		filename=$(echo "$f" | sed -e "s/^${escdirectory}//" );
 		# Check if file is present
 		if [ "$filename" == "$1" ]; then
